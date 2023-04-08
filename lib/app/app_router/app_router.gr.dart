@@ -11,9 +11,9 @@
 import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:flutter/material.dart' as _i4;
 import 'package:flutter_cat_facts/presentation/fact_screen/fact_screen.dart'
-    as _i1;
-import 'package:flutter_cat_facts/presentation/facts_history_screen/facts_history_screen.dart'
     as _i2;
+import 'package:flutter_cat_facts/presentation/facts_history_screen/facts_history_screen.dart'
+    as _i1;
 
 abstract class $AppRouter extends _i3.RootStackRouter {
   $AppRouter([_i4.GlobalKey<_i4.NavigatorState>? navigatorKey])
@@ -21,37 +21,23 @@ abstract class $AppRouter extends _i3.RootStackRouter {
 
   @override
   final Map<String, _i3.PageFactory> pagesMap = {
-    FactRoute.name: (routeData) {
-      return _i3.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i1.FactScreen(),
-      );
-    },
     FactsHistoryRoute.name: (routeData) {
       return _i3.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.FactsHistoryScreen(),
+        child: const _i1.FactsHistoryScreen(),
+      );
+    },
+    FactRoute.name: (routeData) {
+      return _i3.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i2.FactScreen(),
       );
     },
   };
 }
 
 /// generated route for
-/// [_i1.FactScreen]
-class FactRoute extends _i3.PageRouteInfo<void> {
-  const FactRoute({List<_i3.PageRouteInfo>? children})
-      : super(
-          FactRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'FactRoute';
-
-  static const _i3.PageInfo<void> page = _i3.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i2.FactsHistoryScreen]
+/// [_i1.FactsHistoryScreen]
 class FactsHistoryRoute extends _i3.PageRouteInfo<void> {
   const FactsHistoryRoute({List<_i3.PageRouteInfo>? children})
       : super(
@@ -60,6 +46,20 @@ class FactsHistoryRoute extends _i3.PageRouteInfo<void> {
         );
 
   static const String name = 'FactsHistoryRoute';
+
+  static const _i3.PageInfo<void> page = _i3.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i2.FactScreen]
+class FactRoute extends _i3.PageRouteInfo<void> {
+  const FactRoute({List<_i3.PageRouteInfo>? children})
+      : super(
+          FactRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FactRoute';
 
   static const _i3.PageInfo<void> page = _i3.PageInfo<void>(name);
 }

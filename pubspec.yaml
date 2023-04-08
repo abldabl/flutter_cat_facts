@@ -24,6 +24,7 @@ dependencies:
   json_annotation: ^4.8.0
   auto_route: ^6.0.5
   dio: ^5.1.1
+  retrofit: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +35,7 @@ dev_dependencies:
   freezed: ^2.3.2
   json_serializable: ^6.6.1
   auto_route_generator: ^6.0.0
+  retrofit_generator: ^6.0.0+1
 
 flutter:
   uses-material-design: true

@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appRouter = getIt.get<AppRouter>();
+    final appRouter = getIt<AppRouter>();
     return BlocProvider(
-      create: (context) => getIt.get<ContextActivityBloc>(),
+      create: (context) => getIt<ContextActivityBloc>(),
       child: MaterialApp.router(
         localizationsDelegates: const [
           S.delegate,
