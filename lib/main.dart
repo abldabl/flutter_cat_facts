@@ -5,7 +5,7 @@ import 'package:flutter_cat_facts/app/app_router/app_router.gr.dart';
 import 'package:flutter_cat_facts/app/constants/text_constants.dart';
 import 'package:flutter_cat_facts/app/di/injector.dart';
 import 'package:flutter_cat_facts/generated/l10n.dart';
-import 'package:flutter_cat_facts/presentation/context/bloc/context_activity_bloc.dart';
+import 'package:flutter_cat_facts/presentation/context_activity/bloc/context_activity_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {

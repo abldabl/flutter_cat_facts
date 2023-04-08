@@ -6,7 +6,7 @@ import 'package:flutter_cat_facts/data/repositories/facts/facts_remote_repositor
 import 'package:flutter_cat_facts/data/repositories/facts/facts_repository.dart';
 import 'package:flutter_cat_facts/domain/interactors/facts/fetch_fact_interactor.dart';
 import 'package:flutter_cat_facts/domain/mappers/facts/fetch_fact_mapper_to_dto.dart';
-import 'package:flutter_cat_facts/presentation/context/bloc/context_activity_bloc.dart';
+import 'package:flutter_cat_facts/presentation/context_activity/bloc/context_activity_bloc.dart';
 import 'package:flutter_cat_facts/presentation/fact_screen/bloc/fact_bloc.dart';
 import 'package:flutter_cat_facts/presentation/facts_history_screen/bloc/facts_history_bloc.dart';
 import 'package:get_it/get_it.dart';

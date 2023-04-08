@@ -1,7 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cat_facts/app/di/injector.dart';
-import 'package:flutter_cat_facts/presentation/base/base_view.dart';
+import 'package:flutter_cat_facts/presentation/base/base_bloc_widget.dart';
 import 'package:flutter_cat_facts/presentation/fact_screen/bloc/fact_bloc.dart';
 import 'package:flutter_cat_facts/presentation/fact_screen/widgets/fact_card.dart';
 import 'package:flutter_cat_facts/presentation/fact_screen/widgets/fact_screen_app_bar.dart';
@@ -22,7 +22,7 @@ class FactScreen extends StatelessWidget {
         child: BaseBlocWidget<FactBloc, FactEvent, FactState>(
           bloc: getIt<FactBloc>(),
           starterEvent: const FactEvent.fetchFact(),
-          builder: (context, state, bloc) {
+          builder: (_, state, bloc) {
             return state.when(
               loading: () => const CustomProgressIndicator(),
               fetchFactError: () => const CustomErrorWidget(),

@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter_cat_facts/app/exception/base_exception.dart';
 import 'package:flutter_cat_facts/app/exception/data_state.dart';
 import 'package:flutter_cat_facts/data/models/dto/facts/fetch_fact_dto.dart';
 import 'package:flutter_cat_facts/data/repositories/facts/facts_repository.dart';
@@ -20,7 +19,7 @@ class FetchFactInteractor
         final dto = mapper.map(httpResponse.data);
         return DataSuccess(dto);
       }
-      return DataFailed(BaseException(errorMessage: httpResponse.response.statusMessage ?? ''));
+      return DataFailed(handleError(httpResponse.response.statusMessage));
     } catch (e) {
       return DataFailed(handleError(e));
     }

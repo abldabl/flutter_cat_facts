@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cat_facts/app/di/injector.dart';
-import 'package:flutter_cat_facts/presentation/context/bloc/context_activity_bloc.dart';
+import 'package:flutter_cat_facts/presentation/context_activity/bloc/context_activity_bloc.dart';
 
 abstract class BaseBloc<E, S> extends Bloc<E, S> {
   late final ContextActivityBloc contextActivity;

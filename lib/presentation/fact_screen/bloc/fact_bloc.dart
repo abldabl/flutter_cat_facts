@@ -8,7 +8,7 @@ import 'package:flutter_cat_facts/domain/interactors/facts/fetch_fact_interactor
 import 'package:flutter_cat_facts/generated/l10n.dart';
 
 import 'package:flutter_cat_facts/presentation/base/base_bloc.dart';
-import 'package:flutter_cat_facts/presentation/context/bloc/context_activity_bloc.dart';
+import 'package:flutter_cat_facts/presentation/context_activity/bloc/context_activity_bloc.dart';
 import 'package:flutter_cat_facts/presentation/widgets/popups/popup_helper.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
