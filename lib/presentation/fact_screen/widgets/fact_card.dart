@@ -14,15 +14,24 @@ class FactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       decoration: BoxDecoration(
-        color: AppColors.cardBackground,
-        borderRadius: BorderRadius.circular(15),
+        border: Border.all(color: AppColors.border),
+        borderRadius: BorderRadius.circular(10.0),
       ),
       child: Column(
         children: [
-          Text(factText),
+          Text(
+            factText,
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+            textAlign: TextAlign.center,
+          ),
           const SizedBox(height: 10),
-          Text(createDate),
+          Text(
+            createDate,
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+          ),
         ],
       ),
     );

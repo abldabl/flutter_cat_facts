@@ -1,0 +1,12 @@
+{
+    "dioErrorTypeCancel": "Запрос к серверу был отменен",
+    "dioErrorTypeConnectionTimeout": "Время ожидания подключения истекло",
+    "dioErrorTypeReceiveTimeout": "Произошел тайм-аут приема",
+    "dioErrorTypeSendTimeout": "Тайм-аут отправки запроса",
+    "dioErrorTypeConnectionError": "Нет интернета",
+    "unknownError": "Неизвестная ошибка",
+    "error400": "Неправильный запрос",
+    "error403": "Не авторизован",
+    "error404": "Запрошенный ресурс не существует",
+    "error500": "Внутренняя ошибка сервера"
+}

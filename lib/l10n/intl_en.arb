@@ -1,1 +1,12 @@
-{}
+{
+    "dioErrorTypeCancel": "Request to the server was cancelled",
+    "dioErrorTypeConnectionTimeout": "Connection timed out",
+    "dioErrorTypeReceiveTimeout": "Receiving timeout occurred",
+    "dioErrorTypeSendTimeout": "Request send timeout",
+    "dioErrorTypeConnectionError": "No Internet",
+    "unknownError": "Unknown error",
+    "error400": "Bad request",
+    "error403": "Not Authorized",
+    "error404": "The requested resource does not exist",
+    "error500": "Internal server error"
+}

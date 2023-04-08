@@ -49,6 +49,106 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Request to the server was cancelled`
+  String get dioErrorTypeCancel {
+    return Intl.message(
+      'Request to the server was cancelled',
+      name: 'dioErrorTypeCancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connection timed out`
+  String get dioErrorTypeConnectionTimeout {
+    return Intl.message(
+      'Connection timed out',
+      name: 'dioErrorTypeConnectionTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Receiving timeout occurred`
+  String get dioErrorTypeReceiveTimeout {
+    return Intl.message(
+      'Receiving timeout occurred',
+      name: 'dioErrorTypeReceiveTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request send timeout`
+  String get dioErrorTypeSendTimeout {
+    return Intl.message(
+      'Request send timeout',
+      name: 'dioErrorTypeSendTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Internet`
+  String get dioErrorTypeConnectionError {
+    return Intl.message(
+      'No Internet',
+      name: 'dioErrorTypeConnectionError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown error`
+  String get unknownError {
+    return Intl.message(
+      'Unknown error',
+      name: 'unknownError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bad request`
+  String get error400 {
+    return Intl.message(
+      'Bad request',
+      name: 'error400',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not Authorized`
+  String get error403 {
+    return Intl.message(
+      'Not Authorized',
+      name: 'error403',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The requested resource does not exist`
+  String get error404 {
+    return Intl.message(
+      'The requested resource does not exist',
+      name: 'error404',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Internal server error`
+  String get error500 {
+    return Intl.message(
+      'Internal server error',
+      name: 'error500',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +157,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ru'),
     ];
   }
 

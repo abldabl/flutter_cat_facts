@@ -408,7 +408,8 @@ mixin _$FactState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(String factText, String createDate)
+    required TResult Function(
+            String factText, String createDate, String catsImageUrl)
         fetchFactSuccess,
     required TResult Function() fetchFactError,
   }) =>
@@ -416,14 +417,16 @@ mixin _$FactState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(String factText, String createDate)? fetchFactSuccess,
+    TResult? Function(String factText, String createDate, String catsImageUrl)?
+        fetchFactSuccess,
     TResult? Function()? fetchFactError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(String factText, String createDate)? fetchFactSuccess,
+    TResult Function(String factText, String createDate, String catsImageUrl)?
+        fetchFactSuccess,
     TResult Function()? fetchFactError,
     required TResult orElse(),
   }) =>
@@ -507,7 +510,8 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(String factText, String createDate)
+    required TResult Function(
+            String factText, String createDate, String catsImageUrl)
         fetchFactSuccess,
     required TResult Function() fetchFactError,
   }) {
@@ -518,7 +522,8 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(String factText, String createDate)? fetchFactSuccess,
+    TResult? Function(String factText, String createDate, String catsImageUrl)?
+        fetchFactSuccess,
     TResult? Function()? fetchFactError,
   }) {
     return loading?.call();
@@ -528,7 +533,8 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(String factText, String createDate)? fetchFactSuccess,
+    TResult Function(String factText, String createDate, String catsImageUrl)?
+        fetchFactSuccess,
     TResult Function()? fetchFactError,
     required TResult orElse(),
   }) {
@@ -583,7 +589,7 @@ abstract class _$$_FetchFactSuccessCopyWith<$Res> {
           _$_FetchFactSuccess value, $Res Function(_$_FetchFactSuccess) then) =
       __$$_FetchFactSuccessCopyWithImpl<$Res>;
   @useResult
-  $Res call({String factText, String createDate});
+  $Res call({String factText, String createDate, String catsImageUrl});
 }
 
 /// @nodoc
@@ -599,6 +605,7 @@ class __$$_FetchFactSuccessCopyWithImpl<$Res>
   $Res call({
     Object? factText = null,
     Object? createDate = null,
+    Object? catsImageUrl = null,
   }) {
     return _then(_$_FetchFactSuccess(
       factText: null == factText
@@ -609,6 +616,10 @@ class __$$_FetchFactSuccessCopyWithImpl<$Res>
           ? _value.createDate
           : createDate // ignore: cast_nullable_to_non_nullable
               as String,
+      catsImageUrl: null == catsImageUrl
+          ? _value.catsImageUrl
+          : catsImageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -616,16 +627,21 @@ class __$$_FetchFactSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_FetchFactSuccess implements _FetchFactSuccess {
-  const _$_FetchFactSuccess({required this.factText, required this.createDate});
+  const _$_FetchFactSuccess(
+      {required this.factText,
+      required this.createDate,
+      required this.catsImageUrl});
 
   @override
   final String factText;
   @override
   final String createDate;
+  @override
+  final String catsImageUrl;
 
   @override
   String toString() {
-    return 'FactState.fetchFactSuccess(factText: $factText, createDate: $createDate)';
+    return 'FactState.fetchFactSuccess(factText: $factText, createDate: $createDate, catsImageUrl: $catsImageUrl)';
   }
 
   @override
@@ -636,11 +652,14 @@ class _$_FetchFactSuccess implements _FetchFactSuccess {
             (identical(other.factText, factText) ||
                 other.factText == factText) &&
             (identical(other.createDate, createDate) ||
-                other.createDate == createDate));
+                other.createDate == createDate) &&
+            (identical(other.catsImageUrl, catsImageUrl) ||
+                other.catsImageUrl == catsImageUrl));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, factText, createDate);
+  int get hashCode =>
+      Object.hash(runtimeType, factText, createDate, catsImageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -652,33 +671,36 @@ class _$_FetchFactSuccess implements _FetchFactSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(String factText, String createDate)
+    required TResult Function(
+            String factText, String createDate, String catsImageUrl)
         fetchFactSuccess,
     required TResult Function() fetchFactError,
   }) {
-    return fetchFactSuccess(factText, createDate);
+    return fetchFactSuccess(factText, createDate, catsImageUrl);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(String factText, String createDate)? fetchFactSuccess,
+    TResult? Function(String factText, String createDate, String catsImageUrl)?
+        fetchFactSuccess,
     TResult? Function()? fetchFactError,
   }) {
-    return fetchFactSuccess?.call(factText, createDate);
+    return fetchFactSuccess?.call(factText, createDate, catsImageUrl);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(String factText, String createDate)? fetchFactSuccess,
+    TResult Function(String factText, String createDate, String catsImageUrl)?
+        fetchFactSuccess,
     TResult Function()? fetchFactError,
     required TResult orElse(),
   }) {
     if (fetchFactSuccess != null) {
-      return fetchFactSuccess(factText, createDate);
+      return fetchFactSuccess(factText, createDate, catsImageUrl);
     }
     return orElse();
   }
@@ -721,10 +743,12 @@ class _$_FetchFactSuccess implements _FetchFactSuccess {
 abstract class _FetchFactSuccess implements FactState {
   const factory _FetchFactSuccess(
       {required final String factText,
-      required final String createDate}) = _$_FetchFactSuccess;
+      required final String createDate,
+      required final String catsImageUrl}) = _$_FetchFactSuccess;
 
   String get factText;
   String get createDate;
+  String get catsImageUrl;
   @JsonKey(ignore: true)
   _$$_FetchFactSuccessCopyWith<_$_FetchFactSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -769,7 +793,8 @@ class _$_FetchFactError implements _FetchFactError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(String factText, String createDate)
+    required TResult Function(
+            String factText, String createDate, String catsImageUrl)
         fetchFactSuccess,
     required TResult Function() fetchFactError,
   }) {
@@ -780,7 +805,8 @@ class _$_FetchFactError implements _FetchFactError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(String factText, String createDate)? fetchFactSuccess,
+    TResult? Function(String factText, String createDate, String catsImageUrl)?
+        fetchFactSuccess,
     TResult? Function()? fetchFactError,
   }) {
     return fetchFactError?.call();
@@ -790,7 +816,8 @@ class _$_FetchFactError implements _FetchFactError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(String factText, String createDate)? fetchFactSuccess,
+    TResult Function(String factText, String createDate, String catsImageUrl)?
+        fetchFactSuccess,
     TResult Function()? fetchFactError,
     required TResult orElse(),
   }) {

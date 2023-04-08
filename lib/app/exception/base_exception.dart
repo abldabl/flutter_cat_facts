@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_cat_facts/app/constants/exception_constants.dart';
+import 'package:flutter_cat_facts/generated/l10n.dart';
 
 class BaseException implements Exception {
   late String errorMessage;
@@ -8,29 +10,30 @@ class BaseException implements Exception {
   BaseException.fromDioError(DioError dioError) {
     switch (dioError.type) {
       case DioErrorType.cancel:
-        errorMessage = 'Request to the server was cancelled.';
+        errorMessage = S.current.dioErrorTypeCancel;
         break;
       case DioErrorType.connectionTimeout:
-        errorMessage = 'Connection timed out.';
+        errorMessage = S.current.dioErrorTypeConnectionTimeout;
         break;
       case DioErrorType.receiveTimeout:
-        errorMessage = 'Receiving timeout occurred.';
+        errorMessage = S.current.dioErrorTypeReceiveTimeout;
         break;
       case DioErrorType.sendTimeout:
-        errorMessage = 'Request send timeout.';
+        errorMessage = S.current.dioErrorTypeSendTimeout;
         break;
       case DioErrorType.badResponse:
         errorMessage = _handleStatusCode(dioError.response?.statusCode);
         break;
       case DioErrorType.connectionError:
-        if (dioError.message != null && dioError.message!.contains('SocketException')) {
-          errorMessage = 'No Internet.';
+        if (dioError.message != null &&
+            dioError.message!.contains(ExceptionConstants.socketException)) {
+          errorMessage = S.current.dioErrorTypeConnectionError;
           break;
         }
-        errorMessage = 'Unexpected error occurred.';
+        errorMessage = S.current.unknownError;
         break;
       default:
-        errorMessage = 'Something went wrong';
+        errorMessage = S.current.unknownError;
         break;
     }
   }
@@ -38,25 +41,15 @@ class BaseException implements Exception {
   String _handleStatusCode(int? statusCode) {
     switch (statusCode) {
       case 400:
-        return 'Bad request.';
-      case 401:
-        return 'Authentication failed.';
+        return S.current.error400;
       case 403:
-        return 'The authenticated user is not allowed to access the specified API endpoint.';
+        return S.current.error403;
       case 404:
-        return 'The requested resource does not exist.';
-      case 405:
-        return 'Method not allowed. Please check the Allow header for the allowed HTTP methods.';
-      case 415:
-        return 'Unsupported media type. The requested content type or version number is invalid.';
-      case 422:
-        return 'Data validation failed.';
-      case 429:
-        return 'Too many requests.';
+        return S.current.error404;
       case 500:
-        return 'Internal server error.';
+        return S.current.error500;
       default:
-        return 'Oops something went wrong!';
+        return S.current.unknownError;
     }
   }
 

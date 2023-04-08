@@ -32,7 +32,6 @@ class MyApp extends StatelessWidget {
         ],
         supportedLocales: S.delegate.supportedLocales,
         title: TextConstants.appTitle,
-        theme: ThemeData(primarySwatch: Colors.blue),
         routerConfig: appRouter.config(initialRoutes: [const FactRoute()]),
       ),
     );

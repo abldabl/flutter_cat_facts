@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter_cat_facts/app/constants/api_constants.dart';
 import 'package:flutter_cat_facts/app/di/injector.dart';
+import 'package:flutter_cat_facts/app/utils/time_map_helper.dart';
 import 'package:flutter_cat_facts/domain/interactors/facts/fetch_fact_interactor.dart';
 
 import 'package:flutter_cat_facts/presentation/base/base_bloc.dart';
@@ -31,7 +33,8 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
       emit(
         FactState.fetchFactSuccess(
           factText: response.data!.fact,
-          createDate: DateTime.now().toIso8601String(),
+          createDate: _mapFactCreateDate(),
+          catsImageUrl: ApiConstants.catsImageUrl,
         ),
       );
     } else {
@@ -41,6 +44,8 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
       }));
     }
   }
+
+  String _mapFactCreateDate() => TimeMapHelper.dateForFactItem(DateTime.now());
 
   Future<void> anotherFact(FactEvent event, Emitter emit) async {}
   Future<void> factHistorys(FactEvent event, Emitter emit) async {}

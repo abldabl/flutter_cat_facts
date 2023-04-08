@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a ru locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,26 +18,27 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'ru';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "dioErrorTypeCancel": MessageLookupByLibrary.simpleMessage(
-            "Request to the server was cancelled"),
+            "Запрос к серверу был отменен"),
         "dioErrorTypeConnectionError":
-            MessageLookupByLibrary.simpleMessage("No Internet"),
-        "dioErrorTypeConnectionTimeout":
-            MessageLookupByLibrary.simpleMessage("Connection timed out"),
+            MessageLookupByLibrary.simpleMessage("Нет интернета"),
+        "dioErrorTypeConnectionTimeout": MessageLookupByLibrary.simpleMessage(
+            "Время ожидания подключения истекло"),
         "dioErrorTypeReceiveTimeout":
-            MessageLookupByLibrary.simpleMessage("Receiving timeout occurred"),
+            MessageLookupByLibrary.simpleMessage("Произошел тайм-аут приема"),
         "dioErrorTypeSendTimeout":
-            MessageLookupByLibrary.simpleMessage("Request send timeout"),
-        "error400": MessageLookupByLibrary.simpleMessage("Bad request"),
-        "error403": MessageLookupByLibrary.simpleMessage("Not Authorized"),
+            MessageLookupByLibrary.simpleMessage("Тайм-аут отправки запроса"),
+        "error400": MessageLookupByLibrary.simpleMessage("Неправильный запрос"),
+        "error403": MessageLookupByLibrary.simpleMessage("Не авторизован"),
         "error404": MessageLookupByLibrary.simpleMessage(
-            "The requested resource does not exist"),
+            "Запрошенный ресурс не существует"),
         "error500":
-            MessageLookupByLibrary.simpleMessage("Internal server error"),
-        "unknownError": MessageLookupByLibrary.simpleMessage("Unknown error")
+            MessageLookupByLibrary.simpleMessage("Внутренняя ошибка сервера"),
+        "unknownError":
+            MessageLookupByLibrary.simpleMessage("Неизвестная ошибка")
       };
 }
