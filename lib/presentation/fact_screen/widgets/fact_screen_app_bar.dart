@@ -8,7 +8,7 @@ class FactScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.backgroundWhite,
+      backgroundColor: AppColors.white,
       centerTitle: true,
       title: const Text(
         TextConstants.appTitle,

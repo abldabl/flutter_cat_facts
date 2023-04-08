@@ -8,5 +8,9 @@
     "error400": "Bad request",
     "error403": "Not Authorized",
     "error404": "The requested resource does not exist",
-    "error500": "Internal server error"
+    "error500": "Internal server error",
+    "anotherFactBtnText": "Another fact!",
+    "factHistory": "Fact history",
+    "dismiss": "Dismiss",
+    "retry": "Retry"
 }

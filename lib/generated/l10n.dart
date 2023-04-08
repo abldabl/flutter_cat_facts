@@ -149,6 +149,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Another fact!`
+  String get anotherFactBtnText {
+    return Intl.message(
+      'Another fact!',
+      name: 'anotherFactBtnText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fact history`
+  String get factHistory {
+    return Intl.message(
+      'Fact history',
+      name: 'factHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dismiss`
+  String get dismiss {
+    return Intl.message(
+      'Dismiss',
+      name: 'dismiss',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message(
+      'Retry',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

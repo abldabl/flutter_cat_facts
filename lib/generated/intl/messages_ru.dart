@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "anotherFactBtnText":
+            MessageLookupByLibrary.simpleMessage("Другой факт!"),
         "dioErrorTypeCancel": MessageLookupByLibrary.simpleMessage(
             "Запрос к серверу был отменен"),
         "dioErrorTypeConnectionError":
@@ -32,12 +34,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Произошел тайм-аут приема"),
         "dioErrorTypeSendTimeout":
             MessageLookupByLibrary.simpleMessage("Тайм-аут отправки запроса"),
+        "dismiss": MessageLookupByLibrary.simpleMessage("Отклонить"),
         "error400": MessageLookupByLibrary.simpleMessage("Неправильный запрос"),
         "error403": MessageLookupByLibrary.simpleMessage("Не авторизован"),
         "error404": MessageLookupByLibrary.simpleMessage(
             "Запрошенный ресурс не существует"),
         "error500":
             MessageLookupByLibrary.simpleMessage("Внутренняя ошибка сервера"),
+        "factHistory": MessageLookupByLibrary.simpleMessage("История фактов"),
+        "retry": MessageLookupByLibrary.simpleMessage("Повторить"),
         "unknownError":
             MessageLookupByLibrary.simpleMessage("Неизвестная ошибка")
       };
