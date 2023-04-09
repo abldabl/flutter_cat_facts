@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final appRouter = getIt<AppRouter>();
     return BlocProvider(
-      create: (context) => getIt<ContextActivityBloc>(),
+      create: (_) => getIt<ContextActivityBloc>(),
       child: MaterialApp.router(
         localizationsDelegates: const [
           S.delegate,

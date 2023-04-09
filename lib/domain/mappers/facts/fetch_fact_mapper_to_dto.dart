@@ -7,5 +7,6 @@ class FetchFactMapperToDto extends BaseMapperToDto<FactEntry, FetchFactDto> {
   FetchFactDto map(FactEntry entry) => FetchFactDto(
         fact: entry.fact,
         length: entry.length,
+        createdDate: entry.createdDate ?? DateTime.now(),
       );
 }

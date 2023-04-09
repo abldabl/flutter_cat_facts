@@ -1,1 +1,5 @@
-abstract class BaseEntry {}
+class BaseEntry<T> {
+  T? data;
+
+  BaseEntry({this.data});
+}

@@ -12,5 +12,6 @@
     "anotherFactBtnText": "Another fact!",
     "factHistory": "Fact history",
     "dismiss": "Dismiss",
-    "retry": "Retry"
+    "retry": "Retry",
+    "hiveNotInitializedError": "Hive is not initialized"
 }

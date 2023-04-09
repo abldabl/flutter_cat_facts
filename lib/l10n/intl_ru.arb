@@ -12,5 +12,6 @@
     "anotherFactBtnText": "Другой факт!",
     "factHistory": "История фактов",
     "dismiss": "Отклонить",
-    "retry": "Повторить"
+    "retry": "Повторить",
+    "hiveNotInitializedError": "Hive is not initialized"
 }

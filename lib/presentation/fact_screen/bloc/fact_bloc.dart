@@ -4,7 +4,10 @@ import 'package:flutter_cat_facts/app/constants/api_constants.dart';
 import 'package:flutter_cat_facts/app/di/injector.dart';
 import 'package:flutter_cat_facts/app/exception/base_exception.dart';
 import 'package:flutter_cat_facts/app/utils/time_map_helper.dart';
+import 'package:flutter_cat_facts/data/models/dto/facts/fetch_fact_dto.dart';
 import 'package:flutter_cat_facts/domain/interactors/facts/fetch_fact_interactor.dart';
+import 'package:flutter_cat_facts/domain/interactors/facts/put_fact_interactor.dart';
+import 'package:flutter_cat_facts/domain/request_models/facts/put_fact_request_model.dart';
 import 'package:flutter_cat_facts/generated/l10n.dart';
 
 import 'package:flutter_cat_facts/presentation/base/base_bloc.dart';
@@ -18,6 +21,7 @@ part 'fact_bloc.freezed.dart';
 
 class FactBloc extends BaseBloc<FactEvent, FactState> {
   final FetchFactInteractor _fetchFactInteractor = getIt<FetchFactInteractor>();
+  final PutFactInteractor _putFactInteractor = getIt<PutFactInteractor>();
 
   FactBloc() : super(const FactState.loading());
 
@@ -38,10 +42,11 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
       emit(
         FactState.fetchFactSuccess(
           factText: response.data!.fact,
-          createDate: _mapFactCreateDate(),
+          createDate: _mapFactCreateDate(response.data!.createdDate),
           catsImageUrl: ApiConstants.catsImageUrl,
         ),
       );
+      await _saveFactToStorage(response.data!);
     } else {
       emit(const FactState.fetchFactError());
       contextActivity.add(ContextActivityEvent.handleContextActivity((context) async {
@@ -59,7 +64,19 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
     await networkImageProvider.evict();
   }
 
-  String _mapFactCreateDate() => TimeMapHelper.dateForFactItem(DateTime.now());
+  String _mapFactCreateDate(DateTime dateTime) => TimeMapHelper.dateForFactItem(dateTime);
+
+  Future<void> _saveFactToStorage(FetchFactDto dto) async {
+    final result = await _putFactInteractor.call(
+      PutFactRequestModel(
+        fact: dto.fact,
+        createdDate: dto.createdDate,
+      ),
+    );
+    if (result.hasError) {
+      debugPrint(result.error!.errorMessage);
+    }
+  }
 
   Future<void> _fetchFactErrorPopup({
     required BuildContext context,

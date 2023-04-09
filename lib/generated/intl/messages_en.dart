@@ -42,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "error500":
             MessageLookupByLibrary.simpleMessage("Internal server error"),
         "factHistory": MessageLookupByLibrary.simpleMessage("Fact history"),
+        "hiveNotInitializedError":
+            MessageLookupByLibrary.simpleMessage("Hive is not initialized"),
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "unknownError": MessageLookupByLibrary.simpleMessage("Unknown error")
       };

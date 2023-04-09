@@ -189,6 +189,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Hive is not initialized`
+  String get hiveNotInitializedError {
+    return Intl.message(
+      'Hive is not initialized',
+      name: 'hiveNotInitializedError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
