@@ -33,9 +33,6 @@ class Injector {
     getIt.registerLazySingleton<FactsRemoteRepository>(() => FactsRemoteRepository(getIt()));
 
     /// Init interactors
-    getIt.registerLazySingleton<FetchFactInteractor>(() => FetchFactInteractor(getIt(), getIt()));
-
-    /// Init interactor mappers
-    getIt.registerLazySingleton<FetchFactMapperToDto>(() => FetchFactMapperToDto());
+    getIt.registerLazySingleton<FetchFactInteractor>(() => FetchFactInteractor());
   }
 }

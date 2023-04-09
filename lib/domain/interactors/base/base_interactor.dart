@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_cat_facts/app/di/injector.dart';
 import 'package:flutter_cat_facts/app/exception/base_exception.dart';
 import 'package:flutter_cat_facts/app/exception/data_state.dart';
 import 'package:flutter_cat_facts/data/models/dto/base/base_dto.dart';
@@ -8,29 +9,35 @@ import 'package:flutter_cat_facts/domain/request_models/base/base_request_model.
 
 abstract class BaseInteractor<R extends BaseRepository, Dto extends BaseDto,
     Request extends BaseRequestModel> {
-  R repository;
+  late R repository;
 
-  BaseInteractor(this.repository);
+  BaseInteractor() {
+    repository = getIt<R>();
+  }
 
   Future<DataState<Dto>> call(Request request);
 }
 
 abstract class BaseEmptyInteractorWithMapper<R extends BaseRepository, Dto extends BaseDto,
     M extends BaseMapperToDto> {
-  R repository;
+  late R repository;
   M mapper;
 
-  BaseEmptyInteractorWithMapper(this.repository, this.mapper);
+  BaseEmptyInteractorWithMapper(this.mapper) {
+    repository = getIt<R>();
+  }
 
   Future<DataState<Dto>> call();
 }
 
 abstract class BaseInteractorWithMapper<R extends BaseRepository, Dto extends BaseDto,
     M extends BaseMapperToDto, Request extends BaseRequestModel> {
-  R repository;
+  late R repository;
   M mapper;
 
-  BaseInteractorWithMapper(this.repository, this.mapper);
+  BaseInteractorWithMapper(this.mapper) {
+    repository = getIt<R>();
+  }
 
   Future<DataState<Dto>> call(Request request);
 }

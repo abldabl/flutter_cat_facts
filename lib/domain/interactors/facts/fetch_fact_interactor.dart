@@ -8,8 +8,7 @@ import 'package:flutter_cat_facts/domain/mappers/facts/fetch_fact_mapper_to_dto.
 
 class FetchFactInteractor
     extends BaseEmptyInteractorWithMapper<FactsRepository, FetchFactDto, FetchFactMapperToDto> {
-  FetchFactInteractor(FactsRepository repository, FetchFactMapperToDto mapper)
-      : super(repository, mapper);
+  FetchFactInteractor() : super(FetchFactMapperToDto());
 
   @override
   Future<DataState<FetchFactDto>> call() async {
