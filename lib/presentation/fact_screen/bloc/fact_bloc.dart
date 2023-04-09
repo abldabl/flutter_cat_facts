@@ -4,7 +4,7 @@ import 'package:flutter_cat_facts/app/constants/api_constants.dart';
 import 'package:flutter_cat_facts/app/di/injector.dart';
 import 'package:flutter_cat_facts/app/exception/base_exception.dart';
 import 'package:flutter_cat_facts/app/utils/time_map_helper.dart';
-import 'package:flutter_cat_facts/data/models/dto/facts/fetch_fact_dto.dart';
+import 'package:flutter_cat_facts/data/models/dto/facts/fact_dto.dart';
 import 'package:flutter_cat_facts/domain/interactors/facts/fetch_fact_interactor.dart';
 import 'package:flutter_cat_facts/domain/interactors/facts/put_fact_interactor.dart';
 import 'package:flutter_cat_facts/domain/request_models/facts/put_fact_request_model.dart';
@@ -20,8 +20,8 @@ part 'fact_state.dart';
 part 'fact_bloc.freezed.dart';
 
 class FactBloc extends BaseBloc<FactEvent, FactState> {
-  final FetchFactInteractor _fetchFactInteractor = getIt<FetchFactInteractor>();
-  final PutFactInteractor _putFactInteractor = getIt<PutFactInteractor>();
+  final _fetchFactInteractor = getIt<FetchFactInteractor>();
+  final _putFactInteractor = getIt<PutFactInteractor>();
 
   FactBloc() : super(const FactState.loading());
 
@@ -29,7 +29,7 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
   Future<void> onEventHandler(FactEvent event, Emitter emit) async {
     await event.when(
       fetchFact: () => _fetchFact(emit),
-      factHistory: () => factHistorys(event, emit),
+      factHistory: () => factHistory(event, emit),
     );
   }
 
@@ -66,7 +66,7 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
 
   String _mapFactCreateDate(DateTime dateTime) => TimeMapHelper.dateForFactItem(dateTime);
 
-  Future<void> _saveFactToStorage(FetchFactDto dto) async {
+  Future<void> _saveFactToStorage(FactDto dto) async {
     final result = await _putFactInteractor.call(
       PutFactRequestModel(
         fact: dto.fact,
@@ -94,5 +94,5 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
         },
       );
 
-  Future<void> factHistorys(FactEvent event, Emitter emit) async {}
+  Future<void> factHistory(FactEvent event, Emitter emit) async {}
 }

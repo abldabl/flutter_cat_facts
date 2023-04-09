@@ -1,5 +1,1 @@
-class BaseEntry<T> {
-  T? data;
-
-  BaseEntry({this.data});
-}
+abstract class BaseEntry {}

@@ -7,6 +7,7 @@ import 'package:flutter_cat_facts/data/repositories/facts/facts_local_repository
 import 'package:flutter_cat_facts/data/repositories/facts/facts_remote_repository.dart';
 import 'package:flutter_cat_facts/data/repositories/facts/facts_repository.dart';
 import 'package:flutter_cat_facts/domain/interactors/facts/fetch_fact_interactor.dart';
+import 'package:flutter_cat_facts/domain/interactors/facts/fetch_local_fact_list_interactor.dart';
 import 'package:flutter_cat_facts/domain/interactors/facts/put_fact_interactor.dart';
 import 'package:flutter_cat_facts/presentation/context_activity/bloc/context_activity_bloc.dart';
 import 'package:flutter_cat_facts/presentation/fact_screen/bloc/fact_bloc.dart';
@@ -36,6 +37,7 @@ class Injector {
     /// Init interactors
     getIt.registerLazySingleton<FetchFactInteractor>(() => FetchFactInteractor());
     getIt.registerLazySingleton<PutFactInteractor>(() => PutFactInteractor());
+    getIt.registerLazySingleton<FetchLocalFactListInteractor>(() => FetchLocalFactListInteractor());
 
     ///Init clients
     getIt.registerSingletonAsync<HiveClient>(() async {

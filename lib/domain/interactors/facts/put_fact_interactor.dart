@@ -12,9 +12,8 @@ class PutFactInteractor extends BaseInteractorWithMapper<FactsRepository, PutFac
   @override
   Future<DataState<PutFactDto>> call(PutFactRequestModel request) async {
     try {
-      final entry = await repository.putFact(request);
-      final dto = mapper.map(entry);
-      return DataSuccess(dto);
+      final data = await repository.putFact(request);
+      return mapper.map(data);
     } catch (e) {
       return DataFailed(handleError(e));
     }
