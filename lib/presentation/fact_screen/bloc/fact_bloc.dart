@@ -17,15 +17,26 @@ part 'fact_state.dart';
 part 'fact_bloc.freezed.dart';
 
 class FactBloc extends BaseBloc<FactEvent, FactState> {
+  late BuildContext _context;
+
   final FetchFactInteractor _fetchFactInteractor = getIt<FetchFactInteractor>();
+
   FactBloc() : super(const FactState.loading());
 
   @override
   Future<void> onEventHandler(FactEvent event, Emitter emit) async {
     await event.when(
+      start: () => _start(),
       fetchFact: () => _fetchFact(emit),
       factHistory: () => factHistorys(event, emit),
     );
+  }
+
+  Future<void> _start() async {
+    contextActivity.add(ContextActivityEvent.handleContextActivity((context) {
+      _context = context;
+    }));
+    add(const FactEvent.fetchFact());
   }
 
   Future<void> _fetchFact(Emitter emit) async {
@@ -58,7 +69,8 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
     await networkImageProvider.evict();
   }
 
-  String _mapFactCreateDate() => TimeMapHelper.dateForFactItem(DateTime.now());
+  String _mapFactCreateDate() =>
+      TimeMapHelper.dateForFactItem(dateTime: DateTime.now(), context: _context);
 
   Future<void> _fetchFactErrorPopup({
     required BuildContext context,

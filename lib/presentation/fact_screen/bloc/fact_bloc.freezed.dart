@@ -18,18 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$FactEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function() fetchFact,
     required TResult Function() factHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function()? fetchFact,
     TResult? Function()? factHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function()? fetchFact,
     TResult Function()? factHistory,
     required TResult orElse(),
@@ -37,18 +40,21 @@ mixin _$FactEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(FactStartEvent value) start,
     required TResult Function(FetchFactEvent value) fetchFact,
     required TResult Function(FactHistoryEvent value) factHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FactStartEvent value)? start,
     TResult? Function(FetchFactEvent value)? fetchFact,
     TResult? Function(FactHistoryEvent value)? factHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(FactStartEvent value)? start,
     TResult Function(FetchFactEvent value)? fetchFact,
     TResult Function(FactHistoryEvent value)? factHistory,
     required TResult orElse(),
@@ -71,6 +77,114 @@ class _$FactEventCopyWithImpl<$Res, $Val extends FactEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$FactStartEventCopyWith<$Res> {
+  factory _$$FactStartEventCopyWith(
+          _$FactStartEvent value, $Res Function(_$FactStartEvent) then) =
+      __$$FactStartEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FactStartEventCopyWithImpl<$Res>
+    extends _$FactEventCopyWithImpl<$Res, _$FactStartEvent>
+    implements _$$FactStartEventCopyWith<$Res> {
+  __$$FactStartEventCopyWithImpl(
+      _$FactStartEvent _value, $Res Function(_$FactStartEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FactStartEvent implements FactStartEvent {
+  const _$FactStartEvent();
+
+  @override
+  String toString() {
+    return 'FactEvent.start()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FactStartEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function() fetchFact,
+    required TResult Function() factHistory,
+  }) {
+    return start();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function()? fetchFact,
+    TResult? Function()? factHistory,
+  }) {
+    return start?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function()? fetchFact,
+    TResult Function()? factHistory,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FactStartEvent value) start,
+    required TResult Function(FetchFactEvent value) fetchFact,
+    required TResult Function(FactHistoryEvent value) factHistory,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FactStartEvent value)? start,
+    TResult? Function(FetchFactEvent value)? fetchFact,
+    TResult? Function(FactHistoryEvent value)? factHistory,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FactStartEvent value)? start,
+    TResult Function(FetchFactEvent value)? fetchFact,
+    TResult Function(FactHistoryEvent value)? factHistory,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FactStartEvent implements FactEvent {
+  const factory FactStartEvent() = _$FactStartEvent;
 }
 
 /// @nodoc
@@ -111,6 +225,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function() fetchFact,
     required TResult Function() factHistory,
   }) {
@@ -120,6 +235,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function()? fetchFact,
     TResult? Function()? factHistory,
   }) {
@@ -129,6 +245,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function()? fetchFact,
     TResult Function()? factHistory,
     required TResult orElse(),
@@ -142,6 +259,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(FactStartEvent value) start,
     required TResult Function(FetchFactEvent value) fetchFact,
     required TResult Function(FactHistoryEvent value) factHistory,
   }) {
@@ -151,6 +269,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FactStartEvent value)? start,
     TResult? Function(FetchFactEvent value)? fetchFact,
     TResult? Function(FactHistoryEvent value)? factHistory,
   }) {
@@ -160,6 +279,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(FactStartEvent value)? start,
     TResult Function(FetchFactEvent value)? fetchFact,
     TResult Function(FactHistoryEvent value)? factHistory,
     required TResult orElse(),
@@ -213,6 +333,7 @@ class _$FactHistoryEvent implements FactHistoryEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() start,
     required TResult Function() fetchFact,
     required TResult Function() factHistory,
   }) {
@@ -222,6 +343,7 @@ class _$FactHistoryEvent implements FactHistoryEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
     TResult? Function()? fetchFact,
     TResult? Function()? factHistory,
   }) {
@@ -231,6 +353,7 @@ class _$FactHistoryEvent implements FactHistoryEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
     TResult Function()? fetchFact,
     TResult Function()? factHistory,
     required TResult orElse(),
@@ -244,6 +367,7 @@ class _$FactHistoryEvent implements FactHistoryEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(FactStartEvent value) start,
     required TResult Function(FetchFactEvent value) fetchFact,
     required TResult Function(FactHistoryEvent value) factHistory,
   }) {
@@ -253,6 +377,7 @@ class _$FactHistoryEvent implements FactHistoryEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FactStartEvent value)? start,
     TResult? Function(FetchFactEvent value)? fetchFact,
     TResult? Function(FactHistoryEvent value)? factHistory,
   }) {
@@ -262,6 +387,7 @@ class _$FactHistoryEvent implements FactHistoryEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(FactStartEvent value)? start,
     TResult Function(FetchFactEvent value)? fetchFact,
     TResult Function(FactHistoryEvent value)? factHistory,
     required TResult orElse(),
@@ -307,23 +433,23 @@ mixin _$FactState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
-    required TResult Function(FetchFactSuccess value) fetchFactSuccess,
-    required TResult Function(FetchFactError value) fetchFactError,
+    required TResult Function(FactLoadingState value) loading,
+    required TResult Function(FetchFactSuccessState value) fetchFactSuccess,
+    required TResult Function(FetchFactErrorState value) fetchFactError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Loading value)? loading,
-    TResult? Function(FetchFactSuccess value)? fetchFactSuccess,
-    TResult? Function(FetchFactError value)? fetchFactError,
+    TResult? Function(FactLoadingState value)? loading,
+    TResult? Function(FetchFactSuccessState value)? fetchFactSuccess,
+    TResult? Function(FetchFactErrorState value)? fetchFactError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
-    TResult Function(FetchFactSuccess value)? fetchFactSuccess,
-    TResult Function(FetchFactError value)? fetchFactError,
+    TResult Function(FactLoadingState value)? loading,
+    TResult Function(FetchFactSuccessState value)? fetchFactSuccess,
+    TResult Function(FetchFactErrorState value)? fetchFactError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -347,23 +473,25 @@ class _$FactStateCopyWithImpl<$Res, $Val extends FactState>
 }
 
 /// @nodoc
-abstract class _$$LoadingCopyWith<$Res> {
-  factory _$$LoadingCopyWith(_$Loading value, $Res Function(_$Loading) then) =
-      __$$LoadingCopyWithImpl<$Res>;
+abstract class _$$FactLoadingStateCopyWith<$Res> {
+  factory _$$FactLoadingStateCopyWith(
+          _$FactLoadingState value, $Res Function(_$FactLoadingState) then) =
+      __$$FactLoadingStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingCopyWithImpl<$Res>
-    extends _$FactStateCopyWithImpl<$Res, _$Loading>
-    implements _$$LoadingCopyWith<$Res> {
-  __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
+class __$$FactLoadingStateCopyWithImpl<$Res>
+    extends _$FactStateCopyWithImpl<$Res, _$FactLoadingState>
+    implements _$$FactLoadingStateCopyWith<$Res> {
+  __$$FactLoadingStateCopyWithImpl(
+      _$FactLoadingState _value, $Res Function(_$FactLoadingState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Loading implements Loading {
-  const _$Loading();
+class _$FactLoadingState implements FactLoadingState {
+  const _$FactLoadingState();
 
   @override
   String toString() {
@@ -373,7 +501,7 @@ class _$Loading implements Loading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Loading);
+        (other.runtimeType == runtimeType && other is _$FactLoadingState);
   }
 
   @override
@@ -420,9 +548,9 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
-    required TResult Function(FetchFactSuccess value) fetchFactSuccess,
-    required TResult Function(FetchFactError value) fetchFactError,
+    required TResult Function(FactLoadingState value) loading,
+    required TResult Function(FetchFactSuccessState value) fetchFactSuccess,
+    required TResult Function(FetchFactErrorState value) fetchFactError,
   }) {
     return loading(this);
   }
@@ -430,9 +558,9 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Loading value)? loading,
-    TResult? Function(FetchFactSuccess value)? fetchFactSuccess,
-    TResult? Function(FetchFactError value)? fetchFactError,
+    TResult? Function(FactLoadingState value)? loading,
+    TResult? Function(FetchFactSuccessState value)? fetchFactSuccess,
+    TResult? Function(FetchFactErrorState value)? fetchFactError,
   }) {
     return loading?.call(this);
   }
@@ -440,9 +568,9 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
-    TResult Function(FetchFactSuccess value)? fetchFactSuccess,
-    TResult Function(FetchFactError value)? fetchFactError,
+    TResult Function(FactLoadingState value)? loading,
+    TResult Function(FetchFactSuccessState value)? fetchFactSuccess,
+    TResult Function(FetchFactErrorState value)? fetchFactError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -452,25 +580,25 @@ class _$Loading implements Loading {
   }
 }
 
-abstract class Loading implements FactState {
-  const factory Loading() = _$Loading;
+abstract class FactLoadingState implements FactState {
+  const factory FactLoadingState() = _$FactLoadingState;
 }
 
 /// @nodoc
-abstract class _$$FetchFactSuccessCopyWith<$Res> {
-  factory _$$FetchFactSuccessCopyWith(
-          _$FetchFactSuccess value, $Res Function(_$FetchFactSuccess) then) =
-      __$$FetchFactSuccessCopyWithImpl<$Res>;
+abstract class _$$FetchFactSuccessStateCopyWith<$Res> {
+  factory _$$FetchFactSuccessStateCopyWith(_$FetchFactSuccessState value,
+          $Res Function(_$FetchFactSuccessState) then) =
+      __$$FetchFactSuccessStateCopyWithImpl<$Res>;
   @useResult
   $Res call({String factText, String createDate, String catsImageUrl});
 }
 
 /// @nodoc
-class __$$FetchFactSuccessCopyWithImpl<$Res>
-    extends _$FactStateCopyWithImpl<$Res, _$FetchFactSuccess>
-    implements _$$FetchFactSuccessCopyWith<$Res> {
-  __$$FetchFactSuccessCopyWithImpl(
-      _$FetchFactSuccess _value, $Res Function(_$FetchFactSuccess) _then)
+class __$$FetchFactSuccessStateCopyWithImpl<$Res>
+    extends _$FactStateCopyWithImpl<$Res, _$FetchFactSuccessState>
+    implements _$$FetchFactSuccessStateCopyWith<$Res> {
+  __$$FetchFactSuccessStateCopyWithImpl(_$FetchFactSuccessState _value,
+      $Res Function(_$FetchFactSuccessState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -480,7 +608,7 @@ class __$$FetchFactSuccessCopyWithImpl<$Res>
     Object? createDate = null,
     Object? catsImageUrl = null,
   }) {
-    return _then(_$FetchFactSuccess(
+    return _then(_$FetchFactSuccessState(
       factText: null == factText
           ? _value.factText
           : factText // ignore: cast_nullable_to_non_nullable
@@ -499,8 +627,8 @@ class __$$FetchFactSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchFactSuccess implements FetchFactSuccess {
-  const _$FetchFactSuccess(
+class _$FetchFactSuccessState implements FetchFactSuccessState {
+  const _$FetchFactSuccessState(
       {required this.factText,
       required this.createDate,
       required this.catsImageUrl});
@@ -521,7 +649,7 @@ class _$FetchFactSuccess implements FetchFactSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchFactSuccess &&
+            other is _$FetchFactSuccessState &&
             (identical(other.factText, factText) ||
                 other.factText == factText) &&
             (identical(other.createDate, createDate) ||
@@ -537,8 +665,9 @@ class _$FetchFactSuccess implements FetchFactSuccess {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchFactSuccessCopyWith<_$FetchFactSuccess> get copyWith =>
-      __$$FetchFactSuccessCopyWithImpl<_$FetchFactSuccess>(this, _$identity);
+  _$$FetchFactSuccessStateCopyWith<_$FetchFactSuccessState> get copyWith =>
+      __$$FetchFactSuccessStateCopyWithImpl<_$FetchFactSuccessState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -581,9 +710,9 @@ class _$FetchFactSuccess implements FetchFactSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
-    required TResult Function(FetchFactSuccess value) fetchFactSuccess,
-    required TResult Function(FetchFactError value) fetchFactError,
+    required TResult Function(FactLoadingState value) loading,
+    required TResult Function(FetchFactSuccessState value) fetchFactSuccess,
+    required TResult Function(FetchFactErrorState value) fetchFactError,
   }) {
     return fetchFactSuccess(this);
   }
@@ -591,9 +720,9 @@ class _$FetchFactSuccess implements FetchFactSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Loading value)? loading,
-    TResult? Function(FetchFactSuccess value)? fetchFactSuccess,
-    TResult? Function(FetchFactError value)? fetchFactError,
+    TResult? Function(FactLoadingState value)? loading,
+    TResult? Function(FetchFactSuccessState value)? fetchFactSuccess,
+    TResult? Function(FetchFactErrorState value)? fetchFactError,
   }) {
     return fetchFactSuccess?.call(this);
   }
@@ -601,9 +730,9 @@ class _$FetchFactSuccess implements FetchFactSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
-    TResult Function(FetchFactSuccess value)? fetchFactSuccess,
-    TResult Function(FetchFactError value)? fetchFactError,
+    TResult Function(FactLoadingState value)? loading,
+    TResult Function(FetchFactSuccessState value)? fetchFactSuccess,
+    TResult Function(FetchFactErrorState value)? fetchFactError,
     required TResult orElse(),
   }) {
     if (fetchFactSuccess != null) {
@@ -613,40 +742,40 @@ class _$FetchFactSuccess implements FetchFactSuccess {
   }
 }
 
-abstract class FetchFactSuccess implements FactState {
-  const factory FetchFactSuccess(
+abstract class FetchFactSuccessState implements FactState {
+  const factory FetchFactSuccessState(
       {required final String factText,
       required final String createDate,
-      required final String catsImageUrl}) = _$FetchFactSuccess;
+      required final String catsImageUrl}) = _$FetchFactSuccessState;
 
   String get factText;
   String get createDate;
   String get catsImageUrl;
   @JsonKey(ignore: true)
-  _$$FetchFactSuccessCopyWith<_$FetchFactSuccess> get copyWith =>
+  _$$FetchFactSuccessStateCopyWith<_$FetchFactSuccessState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchFactErrorCopyWith<$Res> {
-  factory _$$FetchFactErrorCopyWith(
-          _$FetchFactError value, $Res Function(_$FetchFactError) then) =
-      __$$FetchFactErrorCopyWithImpl<$Res>;
+abstract class _$$FetchFactErrorStateCopyWith<$Res> {
+  factory _$$FetchFactErrorStateCopyWith(_$FetchFactErrorState value,
+          $Res Function(_$FetchFactErrorState) then) =
+      __$$FetchFactErrorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FetchFactErrorCopyWithImpl<$Res>
-    extends _$FactStateCopyWithImpl<$Res, _$FetchFactError>
-    implements _$$FetchFactErrorCopyWith<$Res> {
-  __$$FetchFactErrorCopyWithImpl(
-      _$FetchFactError _value, $Res Function(_$FetchFactError) _then)
+class __$$FetchFactErrorStateCopyWithImpl<$Res>
+    extends _$FactStateCopyWithImpl<$Res, _$FetchFactErrorState>
+    implements _$$FetchFactErrorStateCopyWith<$Res> {
+  __$$FetchFactErrorStateCopyWithImpl(
+      _$FetchFactErrorState _value, $Res Function(_$FetchFactErrorState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FetchFactError implements FetchFactError {
-  const _$FetchFactError();
+class _$FetchFactErrorState implements FetchFactErrorState {
+  const _$FetchFactErrorState();
 
   @override
   String toString() {
@@ -656,7 +785,7 @@ class _$FetchFactError implements FetchFactError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FetchFactError);
+        (other.runtimeType == runtimeType && other is _$FetchFactErrorState);
   }
 
   @override
@@ -703,9 +832,9 @@ class _$FetchFactError implements FetchFactError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
-    required TResult Function(FetchFactSuccess value) fetchFactSuccess,
-    required TResult Function(FetchFactError value) fetchFactError,
+    required TResult Function(FactLoadingState value) loading,
+    required TResult Function(FetchFactSuccessState value) fetchFactSuccess,
+    required TResult Function(FetchFactErrorState value) fetchFactError,
   }) {
     return fetchFactError(this);
   }
@@ -713,9 +842,9 @@ class _$FetchFactError implements FetchFactError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Loading value)? loading,
-    TResult? Function(FetchFactSuccess value)? fetchFactSuccess,
-    TResult? Function(FetchFactError value)? fetchFactError,
+    TResult? Function(FactLoadingState value)? loading,
+    TResult? Function(FetchFactSuccessState value)? fetchFactSuccess,
+    TResult? Function(FetchFactErrorState value)? fetchFactError,
   }) {
     return fetchFactError?.call(this);
   }
@@ -723,9 +852,9 @@ class _$FetchFactError implements FetchFactError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
-    TResult Function(FetchFactSuccess value)? fetchFactSuccess,
-    TResult Function(FetchFactError value)? fetchFactError,
+    TResult Function(FactLoadingState value)? loading,
+    TResult Function(FetchFactSuccessState value)? fetchFactSuccess,
+    TResult Function(FetchFactErrorState value)? fetchFactError,
     required TResult orElse(),
   }) {
     if (fetchFactError != null) {
@@ -735,6 +864,6 @@ class _$FetchFactError implements FetchFactError {
   }
 }
 
-abstract class FetchFactError implements FactState {
-  const factory FetchFactError() = _$FetchFactError;
+abstract class FetchFactErrorState implements FactState {
+  const factory FetchFactErrorState() = _$FetchFactErrorState;
 }
