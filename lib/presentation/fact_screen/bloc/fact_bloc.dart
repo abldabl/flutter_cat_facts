@@ -44,7 +44,7 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
       emit(
         FactState.fetchFactSuccess(
           factText: response.data!.fact,
-          createDate: _mapFactCreateDate(response.data!.createDate),
+          createDate: response.data!.createDate,
           catsImageUrl: ApiConstants.catsImageUrl,
         ),
       );
@@ -65,8 +65,6 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
     const networkImageProvider = NetworkImage(ApiConstants.catsImageUrl);
     await networkImageProvider.evict();
   }
-
-  String _mapFactCreateDate(DateTime dateTime) => TimeMapHelper.dateForFactItem(dateTime);
 
   Future<void> _saveFactToStorage(FactDto dto) async {
     final result = await _addFactInteractor.call(

@@ -5,7 +5,7 @@ class FactState with _$FactState {
   const factory FactState.loading() = FactLoadingState;
   const factory FactState.fetchFactSuccess({
     required String factText,
-    required String createDate,
+    required DateTime createDate,
     required String catsImageUrl,
   }) = FetchFactSuccessState;
   const factory FactState.fetchFactError() = FetchFactErrorState;

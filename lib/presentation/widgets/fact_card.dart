@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cat_facts/app/constants/app_colors.dart';
+import 'package:flutter_cat_facts/app/utils/time_map_helper.dart';
 
 class FactCard extends StatelessWidget {
   final String factText;
-  final String createDate;
+  final DateTime createDate;
 
   const FactCard({
     super.key,
@@ -29,7 +30,7 @@ class FactCard extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            createDate,
+            TimeMapHelper.dateForFactItem(dateTime: createDate, context: context),
             style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
           ),
         ],

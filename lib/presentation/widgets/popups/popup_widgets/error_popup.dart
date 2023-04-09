@@ -34,7 +34,7 @@ class ErorrPopup extends StatelessWidget {
               color: Colors.transparent,
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.white,
                   borderRadius: BorderRadius.circular(25.0),
                 ),
                 padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 45.0, bottom: 20.0),
