@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cat_facts/app/di/injector.dart';
 import 'package:flutter_cat_facts/presentation/base/base_bloc_widget.dart';
 import 'package:flutter_cat_facts/presentation/fact_screen/bloc/fact_bloc.dart';
-import 'package:flutter_cat_facts/presentation/fact_screen/widgets/fact_card.dart';
+import 'package:flutter_cat_facts/presentation/widgets/fact_card.dart';
 import 'package:flutter_cat_facts/presentation/fact_screen/widgets/fact_screen_app_bar.dart';
 import 'package:flutter_cat_facts/presentation/fact_screen/widgets/fact_screen_bottom_buttons.dart';
 import 'package:flutter_cat_facts/presentation/widgets/custom_progress_indicator.dart';
@@ -39,7 +39,7 @@ class FactScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     FactScreenBottomButtons(
                       anotherFactTap: () => bloc.add(const FactEvent.fetchFact()),
-                      factsHistoryTap: () {},
+                      factsHistoryTap: () => bloc.add(const FactEvent.factsHistory()),
                     ),
                     const SizedBox(height: 20),
                   ],

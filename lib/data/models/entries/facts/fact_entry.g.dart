@@ -19,7 +19,7 @@ class FactEntryAdapter extends TypeAdapter<FactEntry> {
     return FactEntry(
       fact: fields[0] as String,
       length: fields[1] as int?,
-      createdDate: fields[2] as DateTime?,
+      createDate: fields[2] as DateTime?,
     );
   }
 
@@ -32,7 +32,7 @@ class FactEntryAdapter extends TypeAdapter<FactEntry> {
       ..writeByte(1)
       ..write(obj.length)
       ..writeByte(2)
-      ..write(obj.createdDate);
+      ..write(obj.createDate);
   }
 
   @override
@@ -53,13 +53,13 @@ class FactEntryAdapter extends TypeAdapter<FactEntry> {
 FactEntry _$FactEntryFromJson(Map<String, dynamic> json) => FactEntry(
       fact: json['fact'] as String,
       length: json['length'] as int?,
-      createdDate: json['createdDate'] == null
+      createDate: json['createDate'] == null
           ? null
-          : DateTime.parse(json['createdDate'] as String),
+          : DateTime.parse(json['createDate'] as String),
     );
 
 Map<String, dynamic> _$FactEntryToJson(FactEntry instance) => <String, dynamic>{
       'fact': instance.fact,
       'length': instance.length,
-      'createdDate': instance.createdDate?.toIso8601String(),
+      'createDate': instance.createDate?.toIso8601String(),
     };

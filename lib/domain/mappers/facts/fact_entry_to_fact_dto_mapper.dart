@@ -5,6 +5,6 @@ class FactsMapper {
   FactDto mapFactEntryToDto(FactEntry entry) => FactDto(
         fact: entry.fact,
         length: entry.length,
-        createdDate: entry.createdDate ?? DateTime.now(),
+        createDate: entry.createDate ?? DateTime.now(),
       );
 }

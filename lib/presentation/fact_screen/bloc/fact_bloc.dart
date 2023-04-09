@@ -1,13 +1,15 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cat_facts/app/constants/api_constants.dart';
 import 'package:flutter_cat_facts/app/di/injector.dart';
+import 'package:flutter_cat_facts/app/enums/app_routes_enum.dart';
 import 'package:flutter_cat_facts/app/exception/base_exception.dart';
 import 'package:flutter_cat_facts/app/utils/time_map_helper.dart';
 import 'package:flutter_cat_facts/data/models/dto/facts/fact_dto.dart';
 import 'package:flutter_cat_facts/domain/interactors/facts/fetch_fact_interactor.dart';
-import 'package:flutter_cat_facts/domain/interactors/facts/put_fact_interactor.dart';
-import 'package:flutter_cat_facts/domain/request_models/facts/put_fact_request_model.dart';
+import 'package:flutter_cat_facts/domain/interactors/facts/add_fact_interactor.dart';
+import 'package:flutter_cat_facts/domain/request_models/facts/add_fact_request_model.dart';
 import 'package:flutter_cat_facts/generated/l10n.dart';
 
 import 'package:flutter_cat_facts/presentation/base/base_bloc.dart';
@@ -21,7 +23,7 @@ part 'fact_bloc.freezed.dart';
 
 class FactBloc extends BaseBloc<FactEvent, FactState> {
   final _fetchFactInteractor = getIt<FetchFactInteractor>();
-  final _putFactInteractor = getIt<PutFactInteractor>();
+  final _addFactInteractor = getIt<AddFactInteractor>();
 
   FactBloc() : super(const FactState.loading());
 
@@ -29,7 +31,7 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
   Future<void> onEventHandler(FactEvent event, Emitter emit) async {
     await event.when(
       fetchFact: () => _fetchFact(emit),
-      factHistory: () => factHistory(event, emit),
+      factsHistory: () => factsHistory(emit),
     );
   }
 
@@ -42,7 +44,7 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
       emit(
         FactState.fetchFactSuccess(
           factText: response.data!.fact,
-          createDate: _mapFactCreateDate(response.data!.createdDate),
+          createDate: _mapFactCreateDate(response.data!.createDate),
           catsImageUrl: ApiConstants.catsImageUrl,
         ),
       );
@@ -67,10 +69,10 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
   String _mapFactCreateDate(DateTime dateTime) => TimeMapHelper.dateForFactItem(dateTime);
 
   Future<void> _saveFactToStorage(FactDto dto) async {
-    final result = await _putFactInteractor.call(
-      PutFactRequestModel(
+    final result = await _addFactInteractor.call(
+      AddFactRequestModel(
         fact: dto.fact,
-        createdDate: dto.createdDate,
+        createDate: dto.createDate,
       ),
     );
     if (result.hasError) {
@@ -94,5 +96,9 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
         },
       );
 
-  Future<void> factHistory(FactEvent event, Emitter emit) async {}
+  Future<void> factsHistory(Emitter emit) async {
+    contextActivity.add(ContextActivityEvent.handleContextActivity((context) async {
+      context.router.pushNamed(AppRoutesEnum.factHistory.path);
+    }));
+  }
 }

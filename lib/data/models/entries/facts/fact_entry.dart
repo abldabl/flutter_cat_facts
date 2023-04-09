@@ -8,13 +8,15 @@ part 'fact_entry.g.dart';
 @JsonSerializable()
 class FactEntry extends BaseEntry {
   @HiveField(0)
-  String fact;
+  String id;
   @HiveField(1)
-  int? length;
+  String fact;
   @HiveField(2)
-  DateTime? createdDate;
+  int? length;
+  @HiveField(3)
+  DateTime? createDate;
 
-  FactEntry({required this.fact, this.length, this.createdDate});
+  FactEntry({this.id = '', required this.fact, this.length, this.createDate});
 
   factory FactEntry.fromJson(Map<String, dynamic> json) => _$FactEntryFromJson(json);
 }

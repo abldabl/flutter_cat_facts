@@ -19,38 +19,38 @@ mixin _$FactEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchFact,
-    required TResult Function() factHistory,
+    required TResult Function() factsHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchFact,
-    TResult? Function()? factHistory,
+    TResult? Function()? factsHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchFact,
-    TResult Function()? factHistory,
+    TResult Function()? factsHistory,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchFactEvent value) fetchFact,
-    required TResult Function(FactHistoryEvent value) factHistory,
+    required TResult Function(FactsHistoryEvent value) factsHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchFactEvent value)? fetchFact,
-    TResult? Function(FactHistoryEvent value)? factHistory,
+    TResult? Function(FactsHistoryEvent value)? factsHistory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchFactEvent value)? fetchFact,
-    TResult Function(FactHistoryEvent value)? factHistory,
+    TResult Function(FactsHistoryEvent value)? factsHistory,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,7 +112,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchFact,
-    required TResult Function() factHistory,
+    required TResult Function() factsHistory,
   }) {
     return fetchFact();
   }
@@ -121,7 +121,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchFact,
-    TResult? Function()? factHistory,
+    TResult? Function()? factsHistory,
   }) {
     return fetchFact?.call();
   }
@@ -130,7 +130,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchFact,
-    TResult Function()? factHistory,
+    TResult Function()? factsHistory,
     required TResult orElse(),
   }) {
     if (fetchFact != null) {
@@ -143,7 +143,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchFactEvent value) fetchFact,
-    required TResult Function(FactHistoryEvent value) factHistory,
+    required TResult Function(FactsHistoryEvent value) factsHistory,
   }) {
     return fetchFact(this);
   }
@@ -152,7 +152,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchFactEvent value)? fetchFact,
-    TResult? Function(FactHistoryEvent value)? factHistory,
+    TResult? Function(FactsHistoryEvent value)? factsHistory,
   }) {
     return fetchFact?.call(this);
   }
@@ -161,7 +161,7 @@ class _$FetchFactEvent implements FetchFactEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchFactEvent value)? fetchFact,
-    TResult Function(FactHistoryEvent value)? factHistory,
+    TResult Function(FactsHistoryEvent value)? factsHistory,
     required TResult orElse(),
   }) {
     if (fetchFact != null) {
@@ -176,35 +176,35 @@ abstract class FetchFactEvent implements FactEvent {
 }
 
 /// @nodoc
-abstract class _$$FactHistoryEventCopyWith<$Res> {
-  factory _$$FactHistoryEventCopyWith(
-          _$FactHistoryEvent value, $Res Function(_$FactHistoryEvent) then) =
-      __$$FactHistoryEventCopyWithImpl<$Res>;
+abstract class _$$FactsHistoryEventCopyWith<$Res> {
+  factory _$$FactsHistoryEventCopyWith(
+          _$FactsHistoryEvent value, $Res Function(_$FactsHistoryEvent) then) =
+      __$$FactsHistoryEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FactHistoryEventCopyWithImpl<$Res>
-    extends _$FactEventCopyWithImpl<$Res, _$FactHistoryEvent>
-    implements _$$FactHistoryEventCopyWith<$Res> {
-  __$$FactHistoryEventCopyWithImpl(
-      _$FactHistoryEvent _value, $Res Function(_$FactHistoryEvent) _then)
+class __$$FactsHistoryEventCopyWithImpl<$Res>
+    extends _$FactEventCopyWithImpl<$Res, _$FactsHistoryEvent>
+    implements _$$FactsHistoryEventCopyWith<$Res> {
+  __$$FactsHistoryEventCopyWithImpl(
+      _$FactsHistoryEvent _value, $Res Function(_$FactsHistoryEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FactHistoryEvent implements FactHistoryEvent {
-  const _$FactHistoryEvent();
+class _$FactsHistoryEvent implements FactsHistoryEvent {
+  const _$FactsHistoryEvent();
 
   @override
   String toString() {
-    return 'FactEvent.factHistory()';
+    return 'FactEvent.factsHistory()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FactHistoryEvent);
+        (other.runtimeType == runtimeType && other is _$FactsHistoryEvent);
   }
 
   @override
@@ -214,29 +214,29 @@ class _$FactHistoryEvent implements FactHistoryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchFact,
-    required TResult Function() factHistory,
+    required TResult Function() factsHistory,
   }) {
-    return factHistory();
+    return factsHistory();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchFact,
-    TResult? Function()? factHistory,
+    TResult? Function()? factsHistory,
   }) {
-    return factHistory?.call();
+    return factsHistory?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchFact,
-    TResult Function()? factHistory,
+    TResult Function()? factsHistory,
     required TResult orElse(),
   }) {
-    if (factHistory != null) {
-      return factHistory();
+    if (factsHistory != null) {
+      return factsHistory();
     }
     return orElse();
   }
@@ -245,36 +245,36 @@ class _$FactHistoryEvent implements FactHistoryEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FetchFactEvent value) fetchFact,
-    required TResult Function(FactHistoryEvent value) factHistory,
+    required TResult Function(FactsHistoryEvent value) factsHistory,
   }) {
-    return factHistory(this);
+    return factsHistory(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchFactEvent value)? fetchFact,
-    TResult? Function(FactHistoryEvent value)? factHistory,
+    TResult? Function(FactsHistoryEvent value)? factsHistory,
   }) {
-    return factHistory?.call(this);
+    return factsHistory?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FetchFactEvent value)? fetchFact,
-    TResult Function(FactHistoryEvent value)? factHistory,
+    TResult Function(FactsHistoryEvent value)? factsHistory,
     required TResult orElse(),
   }) {
-    if (factHistory != null) {
-      return factHistory(this);
+    if (factsHistory != null) {
+      return factsHistory(this);
     }
     return orElse();
   }
 }
 
-abstract class FactHistoryEvent implements FactEvent {
-  const factory FactHistoryEvent() = _$FactHistoryEvent;
+abstract class FactsHistoryEvent implements FactEvent {
+  const factory FactsHistoryEvent() = _$FactsHistoryEvent;
 }
 
 /// @nodoc
