@@ -15,13 +15,17 @@ class FactsHistoryBloc extends BaseBloc<FactsHistoryEvent, FactsHistoryState> {
 
   @override
   Future<void> onEventHandler(FactsHistoryEvent event, Emitter emit) async {
-    await event.when(fetchFactList: () => _fetchFactList(emit));
+    await event.when(fetchFactList: () => fetchFactList(emit));
   }
 
-  Future<void> _fetchFactList(Emitter emit) async {
+  Future<void> fetchFactList(Emitter emit) async {
+    emit(const FactsHistoryState.loading());
     final result = await _fetchLocalFactListInteractor.call();
     if (result.hasData) {
-      emit(FactsHistoryState.fetchFactListSuccess(result.data!.facts));
+      final reversedList = result.data!.facts.reversed.toList();
+      emit(FactsHistoryState.fetchFactList(reversedList));
+    } else {
+      emit(const FactsHistoryState.fetchFactList([]));
     }
   }
 }

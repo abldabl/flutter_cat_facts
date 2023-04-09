@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cat_facts/app/constants/api_constants.dart';
 import 'package:flutter_cat_facts/app/di/injector.dart';
 import 'package:flutter_cat_facts/app/enums/app_routes_enum.dart';
@@ -31,7 +31,7 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
   Future<void> onEventHandler(FactEvent event, Emitter emit) async {
     await event.when(
       fetchFact: () => _fetchFact(emit),
-      factsHistory: () => factsHistory(emit),
+      factsHistoryScreen: () => factsHistoryScreen(),
     );
   }
 
@@ -96,7 +96,7 @@ class FactBloc extends BaseBloc<FactEvent, FactState> {
         },
       );
 
-  Future<void> factsHistory(Emitter emit) async {
+  Future<void> factsHistoryScreen() async {
     contextActivity.add(ContextActivityEvent.handleContextActivity((context) async {
       context.router.pushNamed(AppRoutesEnum.factHistory.path);
     }));

@@ -1,6 +1,5 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cat_facts/app/di/injector.dart';
 import 'package:flutter_cat_facts/presentation/base/base_bloc_widget.dart';
 import 'package:flutter_cat_facts/presentation/facts_history_screen/bloc/facts_history_bloc.dart';
 import 'package:flutter_cat_facts/presentation/widgets/custom_progress_indicator.dart';
@@ -18,12 +17,12 @@ class FactsHistoryScreen extends StatelessWidget {
       appBar: const FactsHistoryScreenAppBar(),
       body: SafeArea(
         child: BaseBlocWidget<FactsHistoryBloc, FactsHistoryEvent, FactsHistoryState>(
-          bloc: getIt<FactsHistoryBloc>(),
+          bloc: FactsHistoryBloc(),
           starterEvent: const FactsHistoryEvent.fetchFactList(),
           builder: (_, state, bloc) {
             return state.when(
               loading: () => const CustomProgressIndicator(),
-              fetchFactListSuccess: (facts) => SingleChildScrollView(
+              fetchFactList: (facts) => SingleChildScrollView(
                 child: Column(
                   children: [
                     const SizedBox(height: 15),

@@ -169,39 +169,38 @@ mixin _$FactsHistoryState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FactDto> facts) fetchFactListSuccess,
+    required TResult Function(List<FactDto> facts) fetchFactList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<FactDto> facts)? fetchFactListSuccess,
+    TResult? Function(List<FactDto> facts)? fetchFactList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FactDto> facts)? fetchFactListSuccess,
+    TResult Function(List<FactDto> facts)? fetchFactList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FactsHistoryLoadingState value) loading,
-    required TResult Function(FetchFactListSuccessState value)
-        fetchFactListSuccess,
+    required TResult Function(FetchFactListState value) fetchFactList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FactsHistoryLoadingState value)? loading,
-    TResult? Function(FetchFactListSuccessState value)? fetchFactListSuccess,
+    TResult? Function(FetchFactListState value)? fetchFactList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FactsHistoryLoadingState value)? loading,
-    TResult Function(FetchFactListSuccessState value)? fetchFactListSuccess,
+    TResult Function(FetchFactListState value)? fetchFactList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -265,7 +264,7 @@ class _$FactsHistoryLoadingState implements FactsHistoryLoadingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FactDto> facts) fetchFactListSuccess,
+    required TResult Function(List<FactDto> facts) fetchFactList,
   }) {
     return loading();
   }
@@ -274,7 +273,7 @@ class _$FactsHistoryLoadingState implements FactsHistoryLoadingState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<FactDto> facts)? fetchFactListSuccess,
+    TResult? Function(List<FactDto> facts)? fetchFactList,
   }) {
     return loading?.call();
   }
@@ -283,7 +282,7 @@ class _$FactsHistoryLoadingState implements FactsHistoryLoadingState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FactDto> facts)? fetchFactListSuccess,
+    TResult Function(List<FactDto> facts)? fetchFactList,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -296,8 +295,7 @@ class _$FactsHistoryLoadingState implements FactsHistoryLoadingState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FactsHistoryLoadingState value) loading,
-    required TResult Function(FetchFactListSuccessState value)
-        fetchFactListSuccess,
+    required TResult Function(FetchFactListState value) fetchFactList,
   }) {
     return loading(this);
   }
@@ -306,7 +304,7 @@ class _$FactsHistoryLoadingState implements FactsHistoryLoadingState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FactsHistoryLoadingState value)? loading,
-    TResult? Function(FetchFactListSuccessState value)? fetchFactListSuccess,
+    TResult? Function(FetchFactListState value)? fetchFactList,
   }) {
     return loading?.call(this);
   }
@@ -315,7 +313,7 @@ class _$FactsHistoryLoadingState implements FactsHistoryLoadingState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FactsHistoryLoadingState value)? loading,
-    TResult Function(FetchFactListSuccessState value)? fetchFactListSuccess,
+    TResult Function(FetchFactListState value)? fetchFactList,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -330,21 +328,20 @@ abstract class FactsHistoryLoadingState implements FactsHistoryState {
 }
 
 /// @nodoc
-abstract class _$$FetchFactListSuccessStateCopyWith<$Res> {
-  factory _$$FetchFactListSuccessStateCopyWith(
-          _$FetchFactListSuccessState value,
-          $Res Function(_$FetchFactListSuccessState) then) =
-      __$$FetchFactListSuccessStateCopyWithImpl<$Res>;
+abstract class _$$FetchFactListStateCopyWith<$Res> {
+  factory _$$FetchFactListStateCopyWith(_$FetchFactListState value,
+          $Res Function(_$FetchFactListState) then) =
+      __$$FetchFactListStateCopyWithImpl<$Res>;
   @useResult
   $Res call({List<FactDto> facts});
 }
 
 /// @nodoc
-class __$$FetchFactListSuccessStateCopyWithImpl<$Res>
-    extends _$FactsHistoryStateCopyWithImpl<$Res, _$FetchFactListSuccessState>
-    implements _$$FetchFactListSuccessStateCopyWith<$Res> {
-  __$$FetchFactListSuccessStateCopyWithImpl(_$FetchFactListSuccessState _value,
-      $Res Function(_$FetchFactListSuccessState) _then)
+class __$$FetchFactListStateCopyWithImpl<$Res>
+    extends _$FactsHistoryStateCopyWithImpl<$Res, _$FetchFactListState>
+    implements _$$FetchFactListStateCopyWith<$Res> {
+  __$$FetchFactListStateCopyWithImpl(
+      _$FetchFactListState _value, $Res Function(_$FetchFactListState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -352,7 +349,7 @@ class __$$FetchFactListSuccessStateCopyWithImpl<$Res>
   $Res call({
     Object? facts = null,
   }) {
-    return _then(_$FetchFactListSuccessState(
+    return _then(_$FetchFactListState(
       null == facts
           ? _value._facts
           : facts // ignore: cast_nullable_to_non_nullable
@@ -363,8 +360,8 @@ class __$$FetchFactListSuccessStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchFactListSuccessState implements FetchFactListSuccessState {
-  const _$FetchFactListSuccessState(final List<FactDto> facts) : _facts = facts;
+class _$FetchFactListState implements FetchFactListState {
+  const _$FetchFactListState(final List<FactDto> facts) : _facts = facts;
 
   final List<FactDto> _facts;
   @override
@@ -376,14 +373,14 @@ class _$FetchFactListSuccessState implements FetchFactListSuccessState {
 
   @override
   String toString() {
-    return 'FactsHistoryState.fetchFactListSuccess(facts: $facts)';
+    return 'FactsHistoryState.fetchFactList(facts: $facts)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchFactListSuccessState &&
+            other is _$FetchFactListState &&
             const DeepCollectionEquality().equals(other._facts, _facts));
   }
 
@@ -394,37 +391,37 @@ class _$FetchFactListSuccessState implements FetchFactListSuccessState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchFactListSuccessStateCopyWith<_$FetchFactListSuccessState>
-      get copyWith => __$$FetchFactListSuccessStateCopyWithImpl<
-          _$FetchFactListSuccessState>(this, _$identity);
+  _$$FetchFactListStateCopyWith<_$FetchFactListState> get copyWith =>
+      __$$FetchFactListStateCopyWithImpl<_$FetchFactListState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FactDto> facts) fetchFactListSuccess,
+    required TResult Function(List<FactDto> facts) fetchFactList,
   }) {
-    return fetchFactListSuccess(facts);
+    return fetchFactList(facts);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<FactDto> facts)? fetchFactListSuccess,
+    TResult? Function(List<FactDto> facts)? fetchFactList,
   }) {
-    return fetchFactListSuccess?.call(facts);
+    return fetchFactList?.call(facts);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FactDto> facts)? fetchFactListSuccess,
+    TResult Function(List<FactDto> facts)? fetchFactList,
     required TResult orElse(),
   }) {
-    if (fetchFactListSuccess != null) {
-      return fetchFactListSuccess(facts);
+    if (fetchFactList != null) {
+      return fetchFactList(facts);
     }
     return orElse();
   }
@@ -433,41 +430,40 @@ class _$FetchFactListSuccessState implements FetchFactListSuccessState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FactsHistoryLoadingState value) loading,
-    required TResult Function(FetchFactListSuccessState value)
-        fetchFactListSuccess,
+    required TResult Function(FetchFactListState value) fetchFactList,
   }) {
-    return fetchFactListSuccess(this);
+    return fetchFactList(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FactsHistoryLoadingState value)? loading,
-    TResult? Function(FetchFactListSuccessState value)? fetchFactListSuccess,
+    TResult? Function(FetchFactListState value)? fetchFactList,
   }) {
-    return fetchFactListSuccess?.call(this);
+    return fetchFactList?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FactsHistoryLoadingState value)? loading,
-    TResult Function(FetchFactListSuccessState value)? fetchFactListSuccess,
+    TResult Function(FetchFactListState value)? fetchFactList,
     required TResult orElse(),
   }) {
-    if (fetchFactListSuccess != null) {
-      return fetchFactListSuccess(this);
+    if (fetchFactList != null) {
+      return fetchFactList(this);
     }
     return orElse();
   }
 }
 
-abstract class FetchFactListSuccessState implements FactsHistoryState {
-  const factory FetchFactListSuccessState(final List<FactDto> facts) =
-      _$FetchFactListSuccessState;
+abstract class FetchFactListState implements FactsHistoryState {
+  const factory FetchFactListState(final List<FactDto> facts) =
+      _$FetchFactListState;
 
   List<FactDto> get facts;
   @JsonKey(ignore: true)
-  _$$FetchFactListSuccessStateCopyWith<_$FetchFactListSuccessState>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$FetchFactListStateCopyWith<_$FetchFactListState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

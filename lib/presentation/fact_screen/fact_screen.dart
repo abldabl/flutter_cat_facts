@@ -39,7 +39,7 @@ class FactScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     FactScreenBottomButtons(
                       anotherFactTap: () => bloc.add(const FactEvent.fetchFact()),
-                      factsHistoryTap: () => bloc.add(const FactEvent.factsHistory()),
+                      factsHistoryTap: () => bloc.add(const FactEvent.factsHistoryScreen()),
                     ),
                     const SizedBox(height: 20),
                   ],
