@@ -21,7 +21,7 @@ class FactScreen extends StatelessWidget {
       body: SafeArea(
         child: BaseBlocWidget<FactBloc, FactEvent, FactState>(
           bloc: getIt<FactBloc>(),
-          starterEvent: const FactEvent.start(),
+          starterEvent: const FactEvent.fetchFact(),
           builder: (_, state, bloc) {
             return state.when(
               loading: () => const CustomProgressIndicator(),
